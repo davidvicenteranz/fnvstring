@@ -32,5 +32,6 @@ usage in code
 .. code:: python
 
    from fnvstring import Fvn64SaltedHasher
-   my_hasher = Fnv64SaltedHasher(salt='Any$tringYouWant, even none')
-   print(my_hasher.hash('Hello World!')) # Will output 63COXAuMHMw if you don't change this salt param
+   my_hasher = Fvn64SaltedHasher(salt='Any$tringYouWant, even none')
+   print(my_hasher.hash('Hello World!')) # Must output dcSEMoww20o if you dont chant the salt param
+
