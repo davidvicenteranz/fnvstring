@@ -11,8 +11,6 @@ Installation
 
    $ pip install fnvstring
 
-.
-
 Usage
 ~~~~~
 
