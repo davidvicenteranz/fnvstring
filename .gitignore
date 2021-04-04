@@ -296,3 +296,7 @@ shippable
 testenv/
 mypy/
 *.yml__not_needed
+
+# Visual studio custom configurations
+#.vscode/
+.vscode2
