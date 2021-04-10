@@ -1,5 +1,7 @@
 import base64
 import struct
+import random
+import string as pystring
 
 DEFAULT_SALT = ""
 
@@ -43,3 +45,13 @@ class Fvn64StringHasher:
     def from_string(string: str, salt: str = None) -> str:
         """Return hash as base64 string."""
         return Fvn64StringHasher.as_base64(string, salt=salt)
+
+    @staticmethod
+    def random_string(length=16):
+        """Return a random string of a given length, default is 16."""
+        choices = pystring.ascii_letters + pystring.digits
+        return ''.join(random.choice(choices) for i in range(0,length))
+
+    @staticmethod
+    def random():
+        return Fvn64StringHasher.as_base64(Fvn64StringHasher.rnd_string())

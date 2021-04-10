@@ -1,6 +1,7 @@
 """fnvstring package.
 
-Python fnv string hash implementation.
+A hash implementation of the Fowler–Noll–Vo non-cryptographic function 
+for python 3.
 """
 
 from fnvstring.hasher import DEFAULT_SALT
@@ -17,8 +18,9 @@ __all__ = (
     "__copyright__",
 )
 
-__copyright__ = "Copyright 2021 David Vicente and individual contributors"
+__copyright__ = "Copyright 2021 David Vicente"
 
+# This package version is auto-managed by scm 
 import importlib_metadata
 
 metadata = importlib_metadata.metadata("fnvstring")
@@ -32,6 +34,14 @@ __author__ = metadata["author"]
 __email__ = metadata["author-email"]
 __license__ = metadata["license"]
 
+# Fvn64StringHasher sortcut to statics methods
+def hash(string, salt=None):
+    """Return a FNV hash of string."""
+    return Hash.as_base64(string, salt=salt)
+
+def random(): 
+    """Return random hash formated as base64 with a length of 11"""
+    return Hash.random()
 
 class Fvn64SaltedHasher:
     """Fnv64 Hasher with specific salt."""
